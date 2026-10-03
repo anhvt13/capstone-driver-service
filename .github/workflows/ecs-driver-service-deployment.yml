@@ -1,7 +1,13 @@
 name: ECS Driver Service Deployment
 
 on:
+  # Triggered by git push event at main branch
   push:
+    branches:
+      - main
+
+  # Supported trigger the deployment manually
+  workflow_dispatch:
     branches:
       - main
 
@@ -23,6 +29,10 @@ jobs:
 
     # Generally start with x86/AMD64 GitHub runner
     runs-on: ubuntu-latest
+
+    # Required manually approval
+    environment:
+      name: prod
 
     steps:
       - name: Checkout repository
