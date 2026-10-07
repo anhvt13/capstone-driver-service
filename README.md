@@ -1,1 +1,1 @@
-Trigger deploy a new version 1.0
+Trigger deploy a new version 2.0
