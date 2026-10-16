@@ -13,6 +13,8 @@ import java.io.Serializable;
 @Table(indexes = {@Index(name = "idx_driver_team", columnList = "team")})
 public class Driver implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;

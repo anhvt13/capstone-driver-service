@@ -1,7 +1,6 @@
 package com.driver.service;
 
 import com.driver.model.Driver;
-import com.driver.model.DriverDTO;
 import com.driver.model.SliceDTO;
 import com.driver.repository.DriverRepository;
 import org.slf4j.Logger;
@@ -51,9 +50,5 @@ public class DriverService {
     public void deleteDriver(Integer driverId) {
         log.info("Cache hit. Start removing from cache");
         driverRepository.deleteById(driverId);
-    }
-
-    private DriverDTO toDriverDTO(Driver driver) {
-        return new DriverDTO(driver.getId(), driver.getName(), driver.getTeam());
     }
 }
