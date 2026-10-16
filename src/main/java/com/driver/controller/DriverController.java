@@ -36,7 +36,7 @@ public class DriverController {
 
     @GetMapping ("/drivers")
     public ResponseEntity<SliceDTO<Driver>> getDrivers(@RequestParam(required = false) String team, @AuthenticationPrincipal Jwt jwt,
-                                                       @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size) {
+                                                       @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "1000") int size) {
         log.info("Request for retrieving list of drivers");
         log.info("Jwt inspector: " + jwt.getClaims().toString());
         Pageable pageable = PageRequest.of(page, size);
