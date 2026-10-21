@@ -25,7 +25,7 @@ public class DriverService {
     @Autowired
     private DriverRepository driverRepository;
 
-//    @Cacheable(value = "drivers", key = "#pageable.pageNumber + ':' + #pageable.pageSize")
+    @Cacheable(value = "drivers", key = "#pageable.pageNumber + ':' + #pageable.pageSize")
     public SliceDTO<Driver> getDrivers(String team, Pageable pageable) {
         log.info("Cache miss. Start querying from the database.");
         if (Objects.isNull(team)) {
