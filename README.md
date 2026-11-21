@@ -27,12 +27,12 @@
 #### Technical Challenges
 1. Driver-service
 - By leverages native ECS Service Connect, service was placed in private network with NO dedicating target groups / load balancer
-- With lambda lifecycle hook on green revision validation, default routes test traffic by "x-amzn-ecs-blue-green-test" header expecting HTTP protocol which is NOT compatible with service was designed HTTPs/mTLS protocol. [Document references](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect-blue-green.html)
+- With lambda lifecycle hook on green revision validation, default routes test traffic by "x-amzn-ecs-blue-green-test" header expecting HTTP protocol which is NOT compatible with service was designed HTTPs / mTLS protocol. [Document references](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect-blue-green.html)
 - Solution: 
    - Built-in blue/green deployments with Service Connect strategy
-   - Lambda lifecycle hook performs health check directly on the green revision by detected task's private IP and served the same HTTPS/mTLS procedure at transport layer
+   - Lambda lifecycle hook performs health check directly on the green revision by detected task's private IP and served the same HTTPS / mTLS procedure at transport layer
 2. BFF-service
-- Located in target groups with distributed traffic by the load balancer
+- Located in target groups with distributed traffic by the load balancer. [Document References](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/alb-resources-for-blue-green.html)
 - Solution:
    - Built-in blue/green deployment with load balancer strategy
    - Route test traffic to the green target group through ALB integration
