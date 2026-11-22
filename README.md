@@ -1,8 +1,11 @@
 ## Project Architecture Overview
 ### CI/CD Pipeline for ECS Deployment
 ***
-#### Solution - ECS Blue/Green Deployment Strategy
+#### Solution - GitHub Actions as CI/CD orchestration
+- Using GitHub as a source code repository and GitHub Actions as CI/CD orchestration for applications deployed on Amazon ECS
+![ECS CI/CD pipeline Diagram](images/Capstone-CI-CD-Pipelines.jpg)
 
+#### Solution - ECS Blue/Green Deployment Strategy
 ![ECS Blue/Green Strategy Diagram](images/Capstone-Blue-Green-Deployment.jpg)
 
 - Decision made: 
